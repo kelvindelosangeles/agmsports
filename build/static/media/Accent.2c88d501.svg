@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="421px" height="120px" viewBox="0 0 421 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <defs>
+        <linearGradient x1="1.39279009%" y1="56.2972469%" x2="49.299468%" y2="50.4767773%" id="linearGradient-1">
+            <stop stop-color="#FF00FF" offset="0%"></stop>
+            <stop stop-color="#FF00FF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="99.3375257%" y1="43.7027531%" x2="81.0202259%" y2="56.2972469%" id="linearGradient-2">
+            <stop stop-color="#FF00FF" offset="0%"></stop>
+            <stop stop-color="#FF00FF" stop-opacity="0.11128715" offset="100%"></stop>
+        </linearGradient>
+        <polyline id="path-3" points="88 0 420.5 0 420.5 118 336.5 118"></polyline>
+    </defs>
+    <g id="Responsive" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Branding-Light-Copy" transform="translate(-899.000000, -496.000000)">
+            <g id="Group-4" transform="translate(120.000000, 374.000000)">
+                <g id="Group" transform="translate(779.000000, 123.000000)">
+                    <rect id="Rectangle-Copy" fill-opacity="0.75" fill="#FF00FF" x="0" y="49.5" width="379" height="30"></rect>
+                    <g id="Path-5" stroke-linecap="square">
+                        <use stroke="url(#linearGradient-1)" xlink:href="#path-3"></use>
+                        <use stroke="url(#linearGradient-2)" xlink:href="#path-3"></use>
+                        <use stroke-opacity="0.75" stroke="#FF00FF" xlink:href="#path-3"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.js": "/static/js/main.e2cc5930.chunk.js",
+    "main.js.map": "/static/js/main.e2cc5930.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.458405e0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.458405e0.js.map",
+    "static/js/2.36a4430b.chunk.js": "/static/js/2.36a4430b.chunk.js",
+    "static/js/2.36a4430b.chunk.js.map": "/static/js/2.36a4430b.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.df332abc7f275097a81a4e623c6aacac.js": "/precache-manifest.df332abc7f275097a81a4e623c6aacac.js",
+    "service-worker.js": "/service-worker.js",
+    "static/js/2.36a4430b.chunk.js.LICENSE.txt": "/static/js/2.36a4430b.chunk.js.LICENSE.txt",
+    "static/media/5B12B73B-C47D-46B0-8A55-B71719695EB6-min.JPG": "/static/media/5B12B73B-C47D-46B0-8A55-B71719695EB6-min.957b12a2.JPG",
+    "static/media/Accent.svg": "/static/media/Accent.2c88d501.svg",
+    "static/media/Dark.svg": "/static/media/Dark.1a98eba0.svg",
+    "static/media/Envelope.svg": "/static/media/Envelope.a4de8008.svg",
+    "static/media/Facebook.svg": "/static/media/Facebook.ef92ac94.svg",
+    "static/media/IMG_2820-min.jpeg": "/static/media/IMG_2820-min.abd24055.jpeg",
+    "static/media/IMG_3230-min.jpeg": "/static/media/IMG_3230-min.ba99b7fa.jpeg",
+    "static/media/IMG_6324_Facetune_18-01-2018-20-39-03-min.JPG": "/static/media/IMG_6324_Facetune_18-01-2018-20-39-03-min.43ce4ca9.JPG",
+    "static/media/IMG_6328_Facetune_18-01-2018-18-54-56-min.JPG": "/static/media/IMG_6328_Facetune_18-01-2018-18-54-56-min.3e7262fe.JPG",
+    "static/media/IMG_9082_Facetune_08-12-2018-17-05-28-min.jpeg": "/static/media/IMG_9082_Facetune_08-12-2018-17-05-28-min.d816dc1f.jpeg",
+    "static/media/IMG_9412-min.jpeg": "/static/media/IMG_9412-min.b775c3b2.jpeg",
+    "static/media/IMG_9420-min.jpeg": "/static/media/IMG_9420-min.a16d14db.jpeg",
+    "static/media/IMG_9576-min.jpeg": "/static/media/IMG_9576-min.29a70349.jpeg",
+    "static/media/IMG_9598_Facetune_10-02-2019-07-07-40-min.jpeg": "/static/media/IMG_9598_Facetune_10-02-2019-07-07-40-min.df7ad709.jpeg",
+    "static/media/Jennifer Profile.jpeg": "/static/media/Jennifer Profile.09f2b76b.jpeg",
+    "static/media/KAT Team Logo 8.PNG": "/static/media/KAT Team Logo 8.92bbaa60.PNG",
+    "static/media/Linkedin.svg": "/static/media/Linkedin.7bc71ad2.svg",
+    "static/media/Rectangle Copy 3.png": "/static/media/Rectangle Copy 3.750665fb.png",
+    "static/media/Rectangle Copy 6.png": "/static/media/Rectangle Copy 6.47f30255.png",
+    "static/media/Slogan.png": "/static/media/Slogan.7905a985.png",
+    "static/media/Twitter.svg": "/static/media/Twitter.c84986bc.svg",
+    "static/media/philanthropy.jpeg": "/static/media/philanthropy.28a99d7e.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.458405e0.js",
+    "static/js/2.36a4430b.chunk.js",
+    "static/js/main.e2cc5930.chunk.js"
+  ]
+}

@@ -1,0 +1,66 @@
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+
+import Facebook from "../../assets/icons/Facebook.svg";
+import Twitter from "../../assets/icons/Twitter.svg";
+import Linkedin from "../../assets/icons/Linkedin.svg";
+import Colors from "../../constants/Colors";
+
+const Navbar = () => {
+    return (
+        <Component>
+            <div className='navlinks'>
+                <Link to='/about'>About</Link>
+                <Link to='/branding'>Branding</Link>
+                <Link to='/contact'>Contact</Link>
+            </div>
+            <div className='social-links'>
+                <Link>
+                    <img src={Facebook} alt='' />
+                </Link>
+                <Link>
+                    <img src={Twitter} alt='' />
+                </Link>
+                <Link>
+                    <img src={Linkedin} alt='' />
+                </Link>
+            </div>
+        </Component>
+    );
+};
+const Component = styled.div`
+    display: none;
+    grid-area: navbar;
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    max-height: 100vh;
+    position: fixed;
+    width: 75px;
+    height: 100%;
+
+    @media (min-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 80px 0;
+    }
+    .navlinks {
+        grid-template-columns: repeat(3, 1fr);
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        transform: rotate(180deg);
+        a {
+            padding: 20px 0;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+    }
+    .social-links {
+        display: grid;
+        grid-template-columns: min-content;
+        grid-row-gap: 40px;
+        justify-items: center;
+    }
+`;
+export default Navbar;
