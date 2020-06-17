@@ -17,7 +17,7 @@ const Contact = () => {
                     <p className='sub-header'>We are always pleased to hear from you. Please feel free to contact us</p>
                 </Header>
 
-                <Form onSubmit={handleSubmit(onSubmit)}>
+                <Form onSubmit={handleSubmit(onSubmit)} action=' https://formsubmit.co/kelvin623@gmail.com ' method='POST'>
                     {/* register your input into the hook by invoking the "register" function */}
                     <input name='name' defaultValue='' placeholder='Name' ref={register({ required: true, minLength: 5 })} />
                     <input name='phone' defaultValue='' placeholder='Phone' ref={register({ required: true })} />

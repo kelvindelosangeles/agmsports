@@ -1,23 +1,85 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import Colors from "../../../constants/Colors";
+import { animated, useSpring, config, useChain } from "react-spring";
+import { useMediaQuery } from "react-responsive";
+
 const HomeAccents = () => {
+    const [toggle, setToggle] = useState(false);
+    useEffect(() => {
+        setToggle(true);
+    }, []);
+
+    // Responsive sizes to determine heights and widths for animations
+    const sm = useMediaQuery({ query: "(max-width:767px)" });
+    const md = useMediaQuery({ query: "(min-width:768px, max-width:1199px)" });
+    const lg = useMediaQuery({ query: "(min-width:1200px)" });
+
+    const squareRef = useRef();
+    const SquareAnimation = useSpring({
+        ref: squareRef,
+        from: {
+            transform: "translateX(100%)",
+        },
+        to: {
+            transform: "translateX(0%)",
+        },
+        config: config.molasses,
+    });
+    const outlineRef = useRef();
+    const OutlineAnimation = useSpring({
+        ref: outlineRef,
+        from: { transform: "scale(0)" },
+        to: { transform: "scale(1)" },
+        config: config.molasses,
+    });
+    const fadeRef = useRef();
+    const FadeIn = useSpring({
+        ref: fadeRef,
+        from: { opacity: 0 },
+        to: { opacity: 1 },
+        config: { duration: 2500 },
+    });
+    const upRef = useRef();
+    const SlideUp = useSpring({
+        ref: upRef,
+        from: { transform: "translateY(0px)" },
+        to: { transform: "translateY(-500px)" },
+        config: { duration: 30000 },
+    });
+    const rightRef = useRef();
+    const SlideRight = useSpring({
+        ref: rightRef,
+        from: { transform: "translateX(0px)" },
+        to: { transform: "translateX(-500px)" },
+        config: { duration: 30000 },
+    });
+    const leftRef = useRef();
+    const SlideLeft = useSpring({
+        ref: leftRef,
+        from: { transform: "translateX(0px)" },
+        to: { transform: "translateX(500px)" },
+        config: { duration: 30000 },
+    });
+
+    useChain([squareRef, outlineRef, fadeRef, leftRef, rightRef, upRef], [0, 0.5, 1, 1.5, 2, 2.5], 1000);
+
     return (
         <React.Fragment>
-            <Square />
-            <OutlinedSquare />
-            <Meticulous>Meticulous</Meticulous>
-            <Disruptive>Disruptive</Disruptive>
-            <Tenacious>Tenacious</Tenacious>
+            <Square style={SquareAnimation} />
+            <OutlinedSquare style={OutlineAnimation} />
+            <Meticulous style={{ ...FadeIn, ...SlideLeft }}>Meticulous</Meticulous>
+            <Disruptive style={{ ...FadeIn, ...SlideUp }}>Disruptive</Disruptive>
+            <Tenacious style={{ ...FadeIn, ...SlideRight }}>Tenacious</Tenacious>
         </React.Fragment>
     );
 };
 
-const Accent = styled.div`
+const Accent = styled(animated.div)`
     position: absolute;
     z-index: -1;
 `;
-const Text = styled.p`
+const Text = styled(animated.p)`
     position: absolute;
     z-index: -1;
     font-size: 48px;
@@ -34,7 +96,6 @@ const Text = styled.p`
         font-size: 144px;
     }
 `;
-
 const OutlinedSquare = styled(Accent)`
     border: 1px solid ${Colors.magenta};
     bottom: 20%;
@@ -65,7 +126,7 @@ const Square = styled(Accent)`
     }
     @media (min-width: 1200px) {
         height: 532px;
-        width: 506px;
+        width: 532px;
     }
 `;
 const Meticulous = styled(Text)`

@@ -74,7 +74,7 @@ const MobileNavbar = ({ location }) => {
 const Component = styled.div`
     z-index: 1000;
     position: fixed;
-    width: -webkit-fill-available;
+    width: 100%;
     padding: 32px 16px;
     display: flex;
     align-items: center;

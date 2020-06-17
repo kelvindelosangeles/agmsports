@@ -8,7 +8,7 @@ const Page = (props) => {
     return (
         <Component>
             <div className='padding' />
-            <Link to='/'>{!isHome && <img src={Logo} className='nav-logo' alt='AGM Logo' />}</Link>
+            {!isHome && <img src={Logo} className='nav-logo' alt='AGM Logo' onClick={() => props.history.push("/")} />}
             {props.children}
         </Component>
     );
@@ -22,6 +22,7 @@ const Component = styled.div`
     padding: 0 16px;
     .nav-logo {
         display: none;
+        cursor: pointer;
     }
     .padding {
         padding-top: 96px;
@@ -31,7 +32,7 @@ const Component = styled.div`
         .nav-logo {
             display: block;
             width: 213px;
-            padding-bottom: 96px;
+            margin-bottom: 96px;
         }
         padding: 0 24px;
         .padding {

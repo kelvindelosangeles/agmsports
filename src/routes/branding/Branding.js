@@ -60,24 +60,45 @@ const Branding = () => {
 
             <OffCourtWork>
                 <div className='blurb'>
-                    <p className='heading'>Work With Athletes</p>
+                    <p className='heading'>Branding</p>
                     <p className='description'>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto perspiciatis quis neque recusandae commodi eligendi, fugit
-                        deleniti quasi asperiores ipsa?
+                        We create opportunities for our athletes through sponsorships and endorsement opportunities, while also working meticulously
+                        to protect their brand.
+                    </p>
+                </div>
+                <div className='blurb'>
+                    <p className='heading'>Empowering our Athletes</p>
+                    <p className='description'>
+                        AGM Sports creates opportunities for our clients beyond the court.  We leverage their brand and advocate on their behalf. We
+                        connect our athletes to a global demographic, which create endless business opportunities and a soaring brand.
                     </p>
                 </div>
                 <div className='blurb'>
                     <p className='heading'>Giving back to the community</p>
                     <p className='description'>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto perspiciatis quis neque recusandae commodi eligendi, fugit
-                        deleniti quasi asperiores ipsa?
+                        AGM is instrumental in working with our athletes and their families to highlight initiatives in their communities. Our
+                        athletes are passionate about education and we create the non-profit that fits their initiative and educate them on building a
+                        proper board and well-funded foundation. AGM has helped athletes such as Karl-Anthony Towns of the Minnesota Timberwolves with{" "}
+                        <a href='https://www.katteam.org/' target='blank'>
+                            KAT Team
+                        </a>{" "}
+                        and Hassan Whiteside of the Portland Trail Blazers with Nassan’s Place.
                     </p>
                 </div>
                 <div className='blurb'>
-                    <p className='heading'>Education</p>
+                    <p className='heading'>NBA Draft Preparation</p>
                     <p className='description'>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto perspiciatis quis neque recusandae commodi eligendi, fugit
-                        deleniti quasi asperiores ipsa?
+                        AGM Sports creates opportunities for our clients beyond the court.  We leverage their brand and advocate on their behalf. We
+                        AGM provides individually customized training programs to improve each player’s strength through drills that stimulate
+                        pre-draft workouts.
+                    </p>
+                </div>
+                <div className='blurb'>
+                    <p className='heading'>Contract Negotiations</p>
+                    <p className='description'>
+                        AGM is unparalleled in its ability to work with domestic and international teams negotiating the best deals for our athletes.
+                        Our agents are NCAA certified, NBPA certified, WNBA certified, FIBA certified attorneys who handle multi-million dollar
+                        corporate transactions.
                     </p>
                 </div>
             </OffCourtWork>
@@ -316,6 +337,7 @@ const OffCourtWork = styled.div`
     .blurb {
         .heading {
             font-size: 16px;
+
             margin-bottom: 24px;
             font-weight: 500;
         }
@@ -323,6 +345,9 @@ const OffCourtWork = styled.div`
             font-weight: 300;
             font-size: 14px;
             line-height: 24px;
+            a {
+                font-weight: 600;
+            }
         }
     }
     @media (min-width: 1024px) {
@@ -332,13 +357,13 @@ const OffCourtWork = styled.div`
         grid-column-gap: 56px;
 
         .blurb {
-            max-width: 262px;
+            /* max-width: 262px; */
         }
     }
     @media (min-width: 1024px) {
         margin-bottom: 120px;
         .blurb {
-            max-width: 294px;
+            /* max-width: 294px; */
         }
     }
 `;

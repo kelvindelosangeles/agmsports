@@ -3,13 +3,18 @@ import styled from "styled-components";
 import Page from "../../global/Page";
 import AboutAccents from "./components/AboutAccents";
 import Colors from "../../constants/Colors";
-import image2 from "../../assets/images/Rectangle Copy 3.png";
 import image3 from "../../assets/images/Rectangle Copy 6.png";
-import Envelope from "../../assets/icons/Envelope.svg";
+import Envelope from "../../assets/icons/animated/Envelope.js";
 import TwitterFeed from "./components/TwitterFeed";
 import Jennifer from "../../assets/images/profile images/Jennifer Profile.jpeg";
+import Polina from "../../assets/images/profile images/polina.jpeg";
+import { withRouter } from "react-router-dom";
 
-const About = () => {
+const About = ({ history }) => {
+    const envelopeClickHandler = () => {
+        console.log("open envelope");
+    };
+
     return (
         <Page>
             <AboutAccents />
@@ -19,7 +24,7 @@ const About = () => {
                         <div className='accent' />
                     </Image1>
                     <div className='name'>Jennifer Jacques</div>
-                    <img src={Envelope} alt='' className='icon' />
+                    <Envelope />
                     <div className='blurb'>
                         Jennifer is a certified NCAA, NBPA, WNBA, FIBA agent. Jennifer has successfully negotiated 2-Way Contracts as well as NBA
                         Contracts with the Denver Nuggets and the Philadelphia 76ers.  Jennifer also handles off the court branding and non-profit
@@ -27,20 +32,20 @@ const About = () => {
                     </div>
                 </Card>
                 <Card className='card2'>
-                    <Image2 image={image2}>
+                    <Image2 image={Polina}>
                         <div className='accent' />
                     </Image2>
-                    <div className='name'>Riley Parker </div>
-                    <img src={Envelope} alt='' className='icon' />
-                    <div className='blurb'>Riley is an Executive Assistant at AGM.</div>
+                    <div className='name'>Polina Manis</div>
+                    <Envelope />
+                    <div className='blurb'>Polina handles Marketing and Communication matters at AGM.</div>
                 </Card>
                 <Card className='card3'>
                     <Image3 image={image3}>
                         <div className='accent' />
                     </Image3>
-                    <div className='name'>Polina Manis</div>
-                    <img src={Envelope} alt='' className='icon' />
-                    <div className='blurb'>Polina handles Marketing and Communication matters at AGM.</div>
+                    <div className='name'>Riley Parker </div>
+                    <Envelope />
+                    <div className='blurb'>Riley is an Executive Assistant at AGM.</div>
                 </Card>
             </Grid>
             <TwitterFeed />
@@ -86,14 +91,17 @@ const Card = styled.div`
         "blurb blurb";
     .name {
         grid-area: name;
-        margin-bottom: 16px;
         font-size: 16px;
+        align-self: flex-end;
     }
     .icon {
         grid-area: icon;
         justify-self: right;
+        cursor: pointer;
+        width: 32px;
     }
     .blurb {
+        margin-top: 16px;
         grid-area: blurb;
         font-weight: 300;
         font-size: 16px;
@@ -190,4 +198,4 @@ const Image3 = styled.div`
          }
 `;
 
-export default About;
+export default withRouter(About);

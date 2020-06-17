@@ -2,18 +2,25 @@ import React from "react";
 import styled from "styled-components";
 import HomeAccents from "./components/HomeAccents";
 import Page from "../../global/Page";
+import { useSpring, animated } from "react-spring";
 
 import Logo from "../../assets/logo/Dark.svg";
 import Colors from "../../constants/Colors";
 const Home = () => {
+    const fadeIn = useSpring({
+        from: { opacity: 0 },
+        to: { opacity: 1 },
+        delay: 200,
+        config: { duration: 3000 },
+    });
     return (
         <Page>
             <HomeAccents />
             <Branding>
-                <img src={Logo} alt='agm logo' className='logo' />
-                <p className='slogan'>
+                <animated.img src={Logo} alt='agm logo' className='logo' style={fadeIn} />
+                <animated.p className='slogan' style={fadeIn}>
                     maximising your experience <span>off</span> and on the <span>court</span>
-                </p>
+                </animated.p>
             </Branding>
         </Page>
     );

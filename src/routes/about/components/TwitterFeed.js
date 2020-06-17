@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Colors from "../../../constants/Colors";
+import { Timeline } from "react-twitter-widgets";
+import Axios from "axios";
 
 const TwitterFeed = () => {
+    useEffect(() => {
+        Axios.get("https://api.twitter.com/1.1/statuses/user_timeline.json?kelvin623=twitterapi&count=2")
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }, []);
+
     return (
         <Component>
             <TwitterLink>
