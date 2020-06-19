@@ -47,7 +47,7 @@ const Branding = () => {
                     clients to give back through their own foundations. AGM works with families and athletes to continue to serve underserved
                     communities.
                 </p>
-                <button>Learn more</button>
+                {/* <button>Learn more</button> */}
             </Philanthropy>
 
             <Slogan>

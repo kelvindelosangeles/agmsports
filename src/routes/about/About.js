@@ -3,14 +3,15 @@ import styled from "styled-components";
 import Page from "../../global/Page";
 import AboutAccents from "./components/AboutAccents";
 import Colors from "../../constants/Colors";
-import image3 from "../../assets/images/Rectangle Copy 6.png";
+import image3 from "../../assets/logo/Dark.svg";
+
 import Envelope from "../../assets/icons/animated/Envelope.js";
 import TwitterFeed from "./components/TwitterFeed";
 import Jennifer from "../../assets/images/profile images/Jennifer Profile.jpeg";
 import Polina from "../../assets/images/profile images/polina.jpeg";
 import { withRouter } from "react-router-dom";
 
-const About = ({ history }) => {
+const About = () => {
     const envelopeClickHandler = () => {
         console.log("open envelope");
     };
@@ -24,7 +25,7 @@ const About = ({ history }) => {
                         <div className='accent' />
                     </Image1>
                     <div className='name'>Jennifer Jacques</div>
-                    <Envelope />
+                    <Envelope email='Jennifer@agmsports.nyc' />
                     <div className='blurb'>
                         Jennifer is a certified NCAA, NBPA, WNBA, FIBA agent. Jennifer has successfully negotiated 2-Way Contracts as well as NBA
                         Contracts with the Denver Nuggets and the Philadelphia 76ers.  Jennifer also handles off the court branding and non-profit
@@ -36,7 +37,7 @@ const About = ({ history }) => {
                         <div className='accent' />
                     </Image2>
                     <div className='name'>Polina Manis</div>
-                    <Envelope />
+                    <Envelope email='Contact@agmg.nyc' />
                     <div className='blurb'>Polina handles Marketing and Communication matters at AGM.</div>
                 </Card>
                 <Card className='card3'>
@@ -44,11 +45,11 @@ const About = ({ history }) => {
                         <div className='accent' />
                     </Image3>
                     <div className='name'>Riley Parker </div>
-                    <Envelope />
+                    <Envelope email='Contact@agmg.nyc' />
                     <div className='blurb'>Riley is an Executive Assistant at AGM.</div>
                 </Card>
             </Grid>
-            <TwitterFeed />
+            {/* <TwitterFeed /> */}
         </Page>
     );
 };
@@ -179,10 +180,15 @@ const Image3 = styled.div`
         background-size: cover;
         background-position: center;
         margin-bottom: 54px;
+        /* ====== Until theres an image for Riley  */
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: white;
         .accent {
             height: 240px;
             width: 300px;
-            background-color: ${Colors.black};
+        /* ====== Until theres an image for Riley  */
+            /* background-color: ${Colors.black}; */
             position: absolute;
             right: -14px;
             bottom: -14px;

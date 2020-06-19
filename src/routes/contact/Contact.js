@@ -1,13 +1,41 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Page from "../../global/Page";
 import ContactAccents from "./components/ContactAccents";
-import { useForm } from "react-hook-form";
 import Colors from "../../constants/Colors";
+import { useForm as formCarry } from "@formcarry/react";
+import { useState } from "react";
 
 const Contact = () => {
-    const { register, handleSubmit, watch, errors } = useForm();
-    const onSubmit = (data) => console.log(data);
+    const { state, submit } = formCarry({
+        id: "B5KG4mN4BPMo",
+    });
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [email, setEmail] = useState("");
+    const changeHandler = (e) => {
+        switch (e.target.name) {
+            case "name":
+                setName(e.target.value);
+                break;
+            case "phone":
+                setPhone(e.target.value);
+                break;
+            case "email":
+                setEmail(e.target.value);
+                break;
+            default:
+                break;
+        }
+    };
+    const clearForms = () => {
+        setEmail("");
+        setName("");
+        setPhone("");
+    };
+    useEffect(() => {
+        state.submitted && clearForms();
+    }, [state.submitted]);
     return (
         <Page>
             <ContactAccents />
@@ -17,11 +45,11 @@ const Contact = () => {
                     <p className='sub-header'>We are always pleased to hear from you. Please feel free to contact us</p>
                 </Header>
 
-                <Form onSubmit={handleSubmit(onSubmit)} action=' https://formsubmit.co/kelvin623@gmail.com ' method='POST'>
-                    {/* register your input into the hook by invoking the "register" function */}
-                    <input name='name' defaultValue='' placeholder='Name' ref={register({ required: true, minLength: 5 })} />
-                    <input name='phone' defaultValue='' placeholder='Phone' ref={register({ required: true })} />
-                    <input name='email' defaultValue='' placeholder='Email' ref={register({ required: true })} />
+                <Form onSubmit={submit}>
+                    {state.submitted && <p className='thankyou'>Thank you for contacting us, we will get back to you shortly.</p>}
+                    <input name='name' placeholder='Full Name' onChange={changeHandler} value={name} required />
+                    <input name='phone' placeholder='Phone' onChange={changeHandler} value={phone} required />
+                    <input name='email' placeholder='Email' type='email' onChange={changeHandler} value={email} required />
 
                     <button type='submit'>
                         <p>Send</p>
@@ -50,6 +78,10 @@ const FormGrid = styled.div`
         "header"
         "form"
         "details";
+    .thankyou {
+        font-size: 16px;
+        font-weight: 600;
+    }
     @media (min-width: 1200px) {
         margin-top: 40px;
         grid-template-columns: 2fr 3fr;
