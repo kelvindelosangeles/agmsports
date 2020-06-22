@@ -11,7 +11,6 @@ import GlobalState from "./redux/reducers/GlobalState";
 
 import { createGlobalStyle, StyleSheetManager } from "styled-components";
 import Colors from "./constants/Colors";
-import SimpleReactLightbox from "simple-react-lightbox";
 
 const rootReducer = combineReducers({
     GlobalState: GlobalState,
@@ -48,9 +47,7 @@ ReactDOM.render(
             <Provider store={store}>
                 <GlobalStyle />
                 <StyleSheetManager disableVendorPrefixes>
-                    <SimpleReactLightbox>
-                        <App />
-                    </SimpleReactLightbox>
+                    <App />
                 </StyleSheetManager>
             </Provider>
         </Router>

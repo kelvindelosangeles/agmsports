@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Page from "../../global/Page";
 import Colors from "../../constants/Colors";
@@ -8,7 +8,8 @@ import PhilanthropyImage from "../../assets/images/philanthropy.jpeg";
 import SloganSVG from "../../assets/accents/Slogan.png";
 import KatLogo from "../../assets/logo/KAT Team Logo 8.PNG";
 
-import { SRLWrapper } from "simple-react-lightbox";
+import FsLightbox from "fslightbox-react";
+
 import img1 from "../../assets/gallery/5B12B73B-C47D-46B0-8A55-B71719695EB6-min.JPG";
 import img2 from "../../assets/gallery/IMG_2820-min.jpeg";
 import img3 from "../../assets/gallery/IMG_3230-min.jpeg";
@@ -21,7 +22,9 @@ import img9 from "../../assets/gallery/IMG_9576-min.jpeg";
 import img10 from "../../assets/gallery/IMG_9598_Facetune_10-02-2019-07-07-40-min.jpeg";
 
 const Branding = () => {
+    const [toggler, setToggler] = useState({ open: false, slide: 1 });
     let Images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
+
     return (
         <Page>
             <BrandingAccents />
@@ -103,20 +106,15 @@ const Branding = () => {
                 </div>
             </OffCourtWork>
 
-            <SRLWrapper>
-                <Gallery>
-                    <p className='heading'>Gallery</p>
-                    <div className='image-grid'>
-                        {Images.map((i) => {
-                            return (
-                                <Image img={i}>
-                                    <img src={i} />
-                                </Image>
-                            );
-                        })}
-                    </div>
-                </Gallery>
-            </SRLWrapper>
+            <Gallery>
+                <p className='heading'>Gallery</p>
+                <div className='image-grid'>
+                    {Images.map((i, index) => {
+                        return <Image img={i} onClick={() => setToggler({ open: !toggler.open, slide: index + 1 })} />;
+                    })}
+                </div>
+            </Gallery>
+            <FsLightbox toggler={toggler.open} slide={toggler.slide} sources={Images} />
         </Page>
     );
 };
