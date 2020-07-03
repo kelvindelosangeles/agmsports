@@ -65,16 +65,21 @@ const HomeAccents = () => {
     useChain([squareRef, outlineRef, fadeRef, leftRef, rightRef, upRef], [0, 0.5, 1, 1.5, 2, 2.5], 1000);
 
     return (
-        <React.Fragment>
+        <Component>
             <Square style={SquareAnimation} />
             <OutlinedSquare style={OutlineAnimation} />
             <Meticulous style={{ ...FadeIn, ...SlideLeft }}>Meticulous</Meticulous>
             <Disruptive style={{ ...FadeIn, ...SlideUp }}>Disruptive</Disruptive>
             <Tenacious style={{ ...FadeIn, ...SlideRight }}>Tenacious</Tenacious>
-        </React.Fragment>
+        </Component>
     );
 };
-
+const Component = styled.div`
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+`;
 const Accent = styled(animated.div)`
     position: absolute;
     z-index: -1;
@@ -97,25 +102,27 @@ const Text = styled(animated.p)`
     }
 `;
 const OutlinedSquare = styled(Accent)`
-    border: 1px solid ${Colors.magenta};
-    bottom: 20%;
+    border: 2px solid ${Colors.magenta};
+    bottom: 30%;
     right: -10px;
     width: 109px;
-    height: 34px;
+    height: 80px;
     @media (min-width: 768px) {
         top: 226px;
-        height: 53px;
+        right: 8%;
     }
     @media (min-width: 1024px) {
         height: 134px;
     }
     @media (min-width: 1200px) {
+        right: 4%;
         top: 408px;
         height: 188px;
     }
 `;
 const Square = styled(Accent)`
-    background-color: ${Colors.lightGreyO};
+    /* background-color: ${Colors.lightGreyO}; */
+    background-color: rgba(214,214,214,.34);
     height: 138px;
     width: 138px;
     top: 0;
@@ -131,15 +138,16 @@ const Square = styled(Accent)`
 `;
 const Meticulous = styled(Text)`
     top: 0;
-    right: -20%;
+    left: 20%;
+    color: #e6e6e687;
     @media (min-width: 768px) {
-        right: -110px;
+        left: 110px;
     }
     @media (min-width: 1024px) {
-        right: -200px;
+        left: 200px;
     }
     @media (min-width: 1200px) {
-        right: -315px;
+        left: 200px;
     }
 `;
 const Disruptive = styled(Text)`

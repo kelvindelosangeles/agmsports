@@ -16,9 +16,9 @@ const Page = (props) => {
 const Component = styled.div`
     grid-area: content;
     position: relative;
+    overflow-x: hidden;
     min-height: 100vh;
     min-height: calc(var(--vh, 1vh) * 100);
-    overflow-x: hidden;
     padding: 0 16px;
     .nav-logo {
         display: none;

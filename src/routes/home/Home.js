@@ -6,6 +6,7 @@ import { useSpring, animated } from "react-spring";
 
 import Logo from "../../assets/logo/Dark.svg";
 import Colors from "../../constants/Colors";
+import Branding from "../branding/Branding";
 const Home = () => {
     const fadeIn = useSpring({
         from: { opacity: 0 },
@@ -16,17 +17,29 @@ const Home = () => {
     return (
         <Page>
             <HomeAccents />
-            <Branding>
+            <Entrance>
                 <animated.img src={Logo} alt='agm logo' className='logo' style={fadeIn} />
                 <animated.p className='slogan' style={fadeIn}>
-                    maximising your experience <span>off</span> and on the <span>court</span>
+                    maximizing your experience <span>off</span> and on the <span>court</span>
                 </animated.p>
-            </Branding>
+            </Entrance>
+            <BrandingWrapper>
+                <Branding show={false} />
+            </BrandingWrapper>
         </Page>
     );
 };
 
-const Branding = styled.div`
+const BrandingWrapper = styled.div`
+    margin-top: -180px;
+    @media (min-width: 768px) {
+        display: none;
+    }
+`;
+
+const Entrance = styled.div`
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
     .logo {
         margin-top: 88px;
         width: 280px;

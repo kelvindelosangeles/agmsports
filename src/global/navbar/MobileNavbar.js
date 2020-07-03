@@ -56,13 +56,13 @@ const MobileNavbar = ({ location }) => {
                         </Link>
                     </div>
                     <div className='social-links'>
-                        {/* <Link>
+                        <a href='#'>
                             <img src={Facebook} alt='' />
-                        </Link>
-                        <Link href='https://www.linkedin.com/company/avant-garde-management-group' target='blank'>
+                        </a>
+                        <a href='#'>
                             <img src={Twitter} alt='' />
-                        </Link> */}
-                        <a href='https://www.linkedin.com/company/avant-garde-management-group' target='blank'>
+                        </a>
+                        <a href='#'>
                             <img src={LinkedIn} alt='' />
                         </a>
                     </div>

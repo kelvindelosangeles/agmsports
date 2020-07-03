@@ -27,6 +27,7 @@ const About = () => {
                     <div className='name'>Jennifer Jacques</div>
                     <Envelope email='Jennifer@agmsports.nyc' />
                     <div className='blurb'>
+                        <span />
                         Jennifer is a certified NCAA, NBPA, WNBA, FIBA agent. Jennifer has successfully negotiated 2-Way Contracts as well as NBA
                         Contracts with the Denver Nuggets and the Philadelphia 76ers.  Jennifer also handles off the court branding and non-profit
                         initiatives on behalf of her clients.
@@ -38,16 +39,19 @@ const About = () => {
                     </Image2>
                     <div className='name'>Polina Manis</div>
                     <Envelope email='Contact@agmg.nyc' />
-                    <div className='blurb'>Polina handles Marketing and Communication matters at AGM.</div>
+                    <div className='blurb'>
+                        <span />
+                        Polina handles Marketing and Communication matters at AGM.
+                    </div>
                 </Card>
-                <Card className='card3'>
+                {/* <Card className='card3'>
                     <Image3 image={image3}>
                         <div className='accent' />
                     </Image3>
                     <div className='name'>Riley Parker </div>
                     <Envelope email='Contact@agmg.nyc' />
                     <div className='blurb'>Riley is an Executive Assistant at AGM.</div>
-                </Card>
+                </Card> */}
             </Grid>
             {/* <TwitterFeed /> */}
         </Page>
@@ -102,11 +106,20 @@ const Card = styled.div`
         width: 32px;
     }
     .blurb {
+        span {
+            margin-top: -4px;
+            margin-bottom: 16px;
+            width: 60px;
+            height: 1px;
+            background-color: ${Colors.black};
+        }
         margin-top: 16px;
         grid-area: blurb;
         font-weight: 300;
         font-size: 16px;
         line-height: 28px;
+        display: flex;
+        flex-direction: column;
     }
     .image {
         grid-area: image;

@@ -10,26 +10,35 @@ import KatLogo from "../../assets/logo/KAT Team Logo 8.PNG";
 
 import FsLightbox from "fslightbox-react";
 
-import img1 from "../../assets/gallery/5B12B73B-C47D-46B0-8A55-B71719695EB6-min.JPG";
-import img2 from "../../assets/gallery/IMG_2820-min.jpeg";
-import img3 from "../../assets/gallery/IMG_3230-min.jpeg";
-import img4 from "../../assets/gallery/IMG_6324_Facetune_18-01-2018-20-39-03-min.JPG";
-import img5 from "../../assets/gallery/IMG_6328_Facetune_18-01-2018-18-54-56-min.JPG";
-import img6 from "../../assets/gallery/IMG_9082_Facetune_08-12-2018-17-05-28-min.jpeg";
-import img7 from "../../assets/gallery/IMG_9412-min.jpeg";
-import img8 from "../../assets/gallery/IMG_9420-min.jpeg";
-import img9 from "../../assets/gallery/IMG_9576-min.jpeg";
-import img10 from "../../assets/gallery/IMG_9598_Facetune_10-02-2019-07-07-40-min.jpeg";
+import img4 from "../../assets/gallery/5B12B73B-C47D-46B0-8A55-B71719695EB6-min.JPG";
+import img5 from "../../assets/gallery/IMG_2820-min.jpeg";
+import img6 from "../../assets/gallery/IMG_3230-min.jpeg";
+import img8 from "../../assets/gallery/IMG_6324_Facetune_18-01-2018-20-39-03-min.JPG";
+import img7 from "../../assets/gallery/IMG_6328_Facetune_18-01-2018-18-54-56-min.JPG";
+import img10 from "../../assets/gallery/IMG_9082_Facetune_08-12-2018-17-05-28-min.jpeg";
+import img1 from "../../assets/gallery/IMG_9412-min.jpeg";
+import img9 from "../../assets/gallery/IMG_9420-min.jpeg";
+import img2 from "../../assets/gallery/IMG_9576-min.jpeg";
+import img3 from "../../assets/gallery/IMG_9598_Facetune_10-02-2019-07-07-40-min.jpeg";
 
-const Branding = () => {
+const Branding = ({ show = true }) => {
     const [toggler, setToggler] = useState({ open: false, slide: 1 });
     let Images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
+    let captions = [
+        "Karl Towns Sr donates $17,500 through KAT Team",
+        "Karl-Anthony Towns of the Minnesota Timberwolves leads the “Walk for Education” to raise money for scholarships.",
+        "Karl-Anthony Towns and the Towns family at the 1st annual “Walk for Education” to raise money for scholarships.",
+        "KAT Team and D’Angelo Russel support Nassan’s Place at Madison Square Garden. ",
+        "Jennifer Jacques supports Hassan Whiteside of the Portland Trailblazers and Nassan’s place at Ciprianni’s Miami to raise money for Autism.",
+        "Jennifer Jacques supports an NBA CARES event with De’Aaron Fox of the Sacramento Kings.",
+        "Jennifer Jacques supports Hassan Whiteside of the Portland Trailblazers at his high school in Newark to retire his Jersey.",
+        "Jennifer Jacques in Newark supporting the Miami Heat with Bam Adebayo of the Miami Heat. ",
+    ];
 
     return (
         <Page>
-            <BrandingAccents />
-
-            <AGMTeam>
+            {show && <BrandingAccents />}
+            <AGMTeam show={show}>
                 <p className='heading'>Off The Court</p>
                 <p className='description'>
                     AGM is disrupting the Sports industry through its branding and un-parallel marketing initiatives.  AGM connects our athletes to a
@@ -41,7 +50,7 @@ const Branding = () => {
 
             <Philanthropy>
                 <div className='img'>
-                    <img src={PhilanthropyImage} alt='Charity Event' />
+                    <img src={img8} alt='Charity Event' />
                     <div className='img-accent'></div>
                 </div>
                 <p className='heading'>Philanthropy</p>
@@ -50,15 +59,30 @@ const Branding = () => {
                     clients to give back through their own foundations. AGM works with families and athletes to continue to serve underserved
                     communities.
                 </p>
-                {/* <button>Learn more</button> */}
+                <div className='blurb'>
+                    <p className='heading'>Giving back to the community</p>
+                    <p className='description'>
+                        AGM is instrumental in working with our athletes and their families to highlight initiatives in their communities. Our
+                        athletes are passionate about education and we create the non-profit that fits their initiative and educate them on building a
+                        proper board and well-funded foundation. AGM has helped athletes such as Karl-Anthony Towns of the Minnesota Timberwolves with{" "}
+                        <a href='https://www.katteam.org/' target='blank'>
+                            KAT Team
+                        </a>{" "}
+                        and Hassan Whiteside of the Portland Trail Blazers with Nassan’s Place.
+                    </p>
+                </div>
+
+                <img className='kat-logo' src={KatLogo} />
             </Philanthropy>
+            {/* <button>Learn more</button> */}
+
+            <Seperator />
 
             <Slogan>
                 <img className='mantra' src={SloganSVG} />
                 <p className='description'>
                     Our team has negotiated contracts on behalf of our clients with NBA Teams as well as International Teams.
                 </p>
-                <img className='kat-logo' src={KatLogo} />
             </Slogan>
 
             <OffCourtWork>
@@ -74,18 +98,6 @@ const Branding = () => {
                     <p className='description'>
                         AGM Sports creates opportunities for our clients beyond the court.  We leverage their brand and advocate on their behalf. We
                         connect our athletes to a global demographic, which create endless business opportunities and a soaring brand.
-                    </p>
-                </div>
-                <div className='blurb'>
-                    <p className='heading'>Giving back to the community</p>
-                    <p className='description'>
-                        AGM is instrumental in working with our athletes and their families to highlight initiatives in their communities. Our
-                        athletes are passionate about education and we create the non-profit that fits their initiative and educate them on building a
-                        proper board and well-funded foundation. AGM has helped athletes such as Karl-Anthony Towns of the Minnesota Timberwolves with{" "}
-                        <a href='https://www.katteam.org/' target='blank'>
-                            KAT Team
-                        </a>{" "}
-                        and Hassan Whiteside of the Portland Trail Blazers with Nassan’s Place.
                     </p>
                 </div>
                 <div className='blurb'>
@@ -110,18 +122,29 @@ const Branding = () => {
                 <p className='heading'>Gallery</p>
                 <div className='image-grid'>
                     {Images.map((i, index) => {
-                        return <Image img={i} onClick={() => setToggler({ open: !toggler.open, slide: index + 1 })} />;
+                        return (
+                            <React.Fragment>
+                                <div className='gallery-item' onClick={() => setToggler({ open: !toggler.open, slide: index + 1 })}>
+                                    <Image img={i} />
+                                    <div className='caption-overlay'>
+                                        <p>{captions[index]}</p>
+                                    </div>
+                                </div>
+                            </React.Fragment>
+                        );
                     })}
                 </div>
             </Gallery>
-            <FsLightbox toggler={toggler.open} slide={toggler.slide} sources={Images} />
+            <FsLightbox toggler={toggler.open} slide={toggler.slide} sources={Images} captions={["kelvin"]} />
         </Page>
     );
 };
 
 const AGMTeam = styled.div`
     display: grid;
-    margin-top: 120px;
+    margin-top: ${({ show }) => {
+        return show ? "120px" : "40px";
+    }};
     margin-bottom: 80px;
     max-width: 1200px;
     grid-template-areas:
@@ -174,27 +197,27 @@ const AGMTeam = styled.div`
 const Philanthropy = styled.div`
     max-width: 1200px;
     margin: auto;
-    margin-bottom: 120px;
     display: grid;
     grid-template-areas:
-        "img"
-        "heading"
-        "description"
-        "button";
+        "img img"
+        "heading kat"
+        "description description"
+        "blurb blurb"
+        "button button";
     .img {
         grid-area: img;
         position: relative;
         margin-bottom: 32px;
         align-self: flex-start;
         img {
-            width: 287px;
+            width: 264px;
             height: auto;
         }
         .img-accent {
             position: absolute;
             z-index: -1;
             height: 100%;
-            width: 287px;
+            width: 264px;
             background-color: ${Colors.magenta};
             left: 10px;
             top: 5px;
@@ -204,7 +227,8 @@ const Philanthropy = styled.div`
         grid-area: heading;
         font-weight: 200;
         font-size: 24px;
-        margin-bottom: 24px;
+        /* margin-bottom: 24px; */
+        align-self: center;
         text-transform: uppercase;
     }
     .description {
@@ -212,7 +236,26 @@ const Philanthropy = styled.div`
         font-weight: 300;
         font-size: 16px;
         line-height: 28px;
+        margin-top: 24px;
         margin-bottom: 40px;
+    }
+    .kat-logo {
+        grid-area: kat;
+        width: 56px;
+        justify-self: right;
+    }
+    .blurb {
+        grid-area: blurb;
+        .heading {
+            font-size: 18px;
+            margin-bottom: 24px;
+        }
+        .description {
+            margin-bottom: 0;
+        }
+        a {
+            font-weight: 700;
+        }
     }
     button {
         grid-area: button;
@@ -226,19 +269,60 @@ const Philanthropy = styled.div`
         background-color: white;
         outline: none;
     }
+
+    @media (min-width: 556px) {
+        grid-template-areas:
+            "img kat"
+            "heading kat"
+            "description description"
+            "blurb blurb"
+            "button button";
+
+        .kat-logo {
+            align-self: flex-end;
+            width: 100px;
+            margin-right: 24px;
+        }
+    }
+    @media (min-width: 768px) {
+        .kat-logo {
+            align-self: flex-end;
+            width: 140px;
+            margin-right: 24px;
+        }
+    }
     @media (min-width: 1024px) {
         grid-template-areas:
-            ". heading"
+            "heading kat"
             "img description"
+            "img blurb"
+            ". blurb"
             ". button";
-        grid-column-gap: 80px;
+        /* grid-column-gap: 80px; */
         .heading {
+            /* Changed the gridarea to move it closer to the kat logo  */
+            grid-area: kat;
             font-size: 48px;
-            text-align: right;
+            text-align: left;
+            justify-self: flex-start;
+            margin-left: 80px;
         }
         .description {
+            width: 100%;
             font-size: 18px;
             line-height: 38px;
+            padding-left: 80px;
+        }
+        .blurb {
+            .heading {
+                margin: unset;
+                text-align: left;
+                padding-left: 80px;
+                font-size: 24px;
+            }
+            a {
+                font-weight: 700;
+            }
         }
     }
     @media (min-width: 1200px) {
@@ -252,6 +336,28 @@ const Philanthropy = styled.div`
         }
     }
 `;
+const Seperator = styled.div`
+    width: 200px;
+    height: 40px;
+    border: 1px solid ${Colors.black};
+    margin: 80px 0;
+    margin-left: -30%;
+    @media (min-width: 556px) {
+        margin-left: -20%;
+    }
+    @media (min-width: 768px) {
+        margin-left: 80%;
+        background-color: ${Colors.black};
+        height: 10px;
+        width: 350px;
+    }
+    @media (min-width: 1024px) {
+        height: 8px;
+    }
+    @media (min-width: 1500px) {
+        margin-left: 90%;
+    }
+`;
 const Slogan = styled.div`
     display: grid;
     max-width: 1200px;
@@ -259,7 +365,7 @@ const Slogan = styled.div`
     margin-bottom: 56px;
     grid-template-columns: 1fr min-content;
     grid-template-areas:
-        "mantra kat"
+        "mantra mantra"
         "description description";
     .description {
         grid-area: description;
@@ -272,19 +378,12 @@ const Slogan = styled.div`
         width: 100%;
         max-width: 295px;
     }
-    .kat-logo {
-        grid-area: kat;
-        width: 56px;
-        justify-self: right;
-    }
+
     @media (min-width: 556px) {
         grid-column-gap: 40px;
         .mantra,
         .description {
             max-width: 460px;
-        }
-        .kat-logo {
-            width: 80px;
         }
     }
     @media (min-width: 768px) {
@@ -295,9 +394,6 @@ const Slogan = styled.div`
             "mantra kat"
             "description kat";
         margin-bottom: 80px;
-        .kat-logo {
-            width: 120px;
-        }
     }
     @media (min-width: 1024px) {
         margin-bottom: 80px;
@@ -311,21 +407,14 @@ const Slogan = styled.div`
         .description {
             max-width: 638px;
         }
-        .kat-logo {
-            width: 132px;
-        }
     }
     @media (min-width: 1200px) {
         margin-bottom: 120px;
         .mantra {
             width: 664px;
         }
-        .kat-logo {
-            width: 170px;
-        }
     }
 `;
-
 const OffCourtWork = styled.div`
     max-width: 1200px;
     margin: auto;
@@ -365,12 +454,36 @@ const OffCourtWork = styled.div`
         }
     }
 `;
-
 const Gallery = styled.div`
     max-width: 1200px;
     margin: auto;
     margin-bottom: 80px;
     touch-action: manipulation;
+
+    .gallery-item {
+        position: relative;
+        @media (min-width: 768px) {
+            :hover {
+                .caption-overlay {
+                    opacity: 1;
+                }
+            }
+        }
+        .caption-overlay {
+            transition: all 200ms ease-in-out;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            padding: 16px;
+            p {
+                color: white;
+                font-size: 14px;
+            }
+        }
+    }
 
     .heading {
         margin-bottom: 40px;
@@ -389,7 +502,6 @@ const Gallery = styled.div`
         }
     }
 `;
-
 const Image = styled.div`
     cursor: pointer;
     height: 100%;

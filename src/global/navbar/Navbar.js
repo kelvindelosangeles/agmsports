@@ -16,13 +16,13 @@ const Navbar = () => {
                 <Link to='/contact'>Contact</Link>
             </div>
             <div className='social-links'>
-                {/* <a>
+                <a href='#'>
                     <img src={Facebook} alt='' />
-                </a> */}
-                {/* <a>
+                </a>
+                <a href='#'>
                     <img src={Twitter} alt='' />
-                </a> */}
-                <a href='https://www.linkedin.com/company/avant-garde-management-group' target='blank'>
+                </a>
+                <a href='#'>
                     <img src={Linkedin} alt='' />
                 </a>
             </div>
