@@ -35,6 +35,8 @@ const Branding = ({ show = true }) => {
         "Jennifer Jacques in Newark supporting the Miami Heat with Bam Adebayo of the Miami Heat. ",
     ];
 
+    const testFunc = () => {};
+
     return (
         <Page>
             {show && <BrandingAccents />}
@@ -50,7 +52,7 @@ const Branding = ({ show = true }) => {
 
             <Philanthropy>
                 <div className='img'>
-                    <img src={img8} alt='Charity Event' />
+                    <img src={img9} alt='Charity Event' />
                     <div className='img-accent'></div>
                 </div>
                 <p className='heading'>Philanthropy</p>
@@ -135,7 +137,7 @@ const Branding = ({ show = true }) => {
                     })}
                 </div>
             </Gallery>
-            <FsLightbox toggler={toggler.open} slide={toggler.slide} sources={Images} captions={["kelvin"]} />
+            <FsLightbox toggler={toggler.open} slide={toggler.slide} sources={Images} />
         </Page>
     );
 };
