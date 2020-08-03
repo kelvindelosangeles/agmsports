@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import Facebook from "../../assets/icons/Facebook.svg";
+import Instagram from "../../assets/icons/instagram.svg";
 import Twitter from "../../assets/icons/Twitter.svg";
 import Linkedin from "../../assets/icons/Linkedin.svg";
 import Colors from "../../constants/Colors";
@@ -11,13 +11,14 @@ const Navbar = () => {
     return (
         <Component>
             <div className='navlinks'>
-                <Link to='/about'>About</Link>
-                <Link to='/branding'>Branding</Link>
                 <Link to='/contact'>Contact</Link>
+                <Link to='/contact'>Clients</Link>
+                <Link to='/branding'>Branding</Link>
+                <Link to='/about'>About</Link>
             </div>
             <div className='social-links'>
                 <a href='#'>
-                    <img src={Facebook} alt='' />
+                    <img src={Instagram} alt='' />
                 </a>
                 <a href='#'>
                     <img src={Twitter} alt='' />

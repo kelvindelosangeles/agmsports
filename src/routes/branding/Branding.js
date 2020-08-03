@@ -15,24 +15,29 @@ import img5 from "../../assets/gallery/IMG_2820-min.jpeg";
 import img6 from "../../assets/gallery/IMG_3230-min.jpeg";
 import img8 from "../../assets/gallery/IMG_6324_Facetune_18-01-2018-20-39-03-min.JPG";
 import img7 from "../../assets/gallery/IMG_6328_Facetune_18-01-2018-18-54-56-min.JPG";
-import img10 from "../../assets/gallery/IMG_9082_Facetune_08-12-2018-17-05-28-min.jpeg";
+import img11 from "../../assets/gallery/IMG_9082_Facetune_08-12-2018-17-05-28-min.jpeg";
 import img1 from "../../assets/gallery/IMG_9412-min.jpeg";
-import img9 from "../../assets/gallery/IMG_9420-min.jpeg";
+import img10 from "../../assets/gallery/IMG_9420-min.jpeg";
 import img2 from "../../assets/gallery/IMG_9576-min.jpeg";
 import img3 from "../../assets/gallery/IMG_9598_Facetune_10-02-2019-07-07-40-min.jpeg";
+import img9 from "../../assets/gallery/image-9.jpg";
+import { withRouter } from "react-router-dom";
 
-const Branding = ({ show = true }) => {
+const Branding = ({ show = true, history }) => {
     const [toggler, setToggler] = useState({ open: false, slide: 1 });
-    let Images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
+    let Images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11];
     let captions = [
-        "Karl Towns Sr donates $17,500 through KAT Team",
+        "Karl Towns, Sr., the President of the KAT Team Foundation donates $17,500 to the Reed Foundation for Autism.",
         "Karl-Anthony Towns of the Minnesota Timberwolves leads the “Walk for Education” to raise money for scholarships.",
         "Karl-Anthony Towns and the Towns family at the 1st annual “Walk for Education” to raise money for scholarships.",
-        "KAT Team and D’Angelo Russel support Nassan’s Place at Madison Square Garden. ",
+        "The president of the KAT Team foundation, Karl Towns Sr., D’Angelo Russell of the Minnesota Timberwolves and Jennifer Jacques support Nassan’s Place Foundation at Madison Square Garden.",
         "Jennifer Jacques supports Hassan Whiteside of the Portland Trailblazers and Nassan’s place at Ciprianni’s Miami to raise money for Autism.",
         "Jennifer Jacques supports an NBA CARES event with De’Aaron Fox of the Sacramento Kings.",
         "Jennifer Jacques supports Hassan Whiteside of the Portland Trailblazers at his high school in Newark to retire his Jersey.",
         "Jennifer Jacques in Newark supporting the Miami Heat with Bam Adebayo of the Miami Heat. ",
+        "Jennifer Jacques in Newark, New Jersey supporting the Miami Heat with Goran Dragić of the Miami Heat.",
+        "Karl-Anthony Towns discusses the importance of education and scholarships at the KAT Team Foundation’s 1st Annual “Walk for Education.",
+        "Jennifer Jacques Joins Karl Towns Sr., President of the KAT Team Foundation in supporting a University of Kentucky event at Madison Square Garden.",
     ];
 
     const testFunc = () => {};
@@ -40,6 +45,7 @@ const Branding = ({ show = true }) => {
     return (
         <Page>
             {show && <BrandingAccents />}
+            {!show && <PageSeperator />}
             <AGMTeam show={show}>
                 <p className='heading'>Off The Court</p>
                 <p className='description'>
@@ -52,7 +58,7 @@ const Branding = ({ show = true }) => {
 
             <Philanthropy>
                 <div className='img'>
-                    <img src={img9} alt='Charity Event' />
+                    <img src={img10} alt='Charity Event' />
                     <div className='img-accent'></div>
                 </div>
                 <p className='heading'>Philanthropy</p>
@@ -74,7 +80,7 @@ const Branding = ({ show = true }) => {
                     </p>
                 </div>
 
-                <img className='kat-logo' src={KatLogo} />
+                <img className='kat-logo' src={KatLogo} onClick={() => window.open("https://www.katteam.org/")} />
             </Philanthropy>
             {/* <button>Learn more</button> */}
 
@@ -128,6 +134,7 @@ const Branding = ({ show = true }) => {
                             <React.Fragment>
                                 <div className='gallery-item' onClick={() => setToggler({ open: !toggler.open, slide: index + 1 })}>
                                     <Image img={i} />
+                                    <p className='caption'>{captions[index]}</p>
                                     <div className='caption-overlay'>
                                         <p>{captions[index]}</p>
                                     </div>
@@ -137,6 +144,7 @@ const Branding = ({ show = true }) => {
                     })}
                 </div>
             </Gallery>
+
             <FsLightbox toggler={toggler.open} slide={toggler.slide} sources={Images} />
         </Page>
     );
@@ -156,7 +164,7 @@ const AGMTeam = styled.div`
     .heading {
         grid-area: heading;
         font-weight: 200;
-        font-size: 24px;
+        font-size: 32px;
         margin-bottom: 32px;
         text-transform: uppercase;
     }
@@ -228,7 +236,7 @@ const Philanthropy = styled.div`
     .heading {
         grid-area: heading;
         font-weight: 200;
-        font-size: 24px;
+        font-size: 32px;
         /* margin-bottom: 24px; */
         align-self: center;
         text-transform: uppercase;
@@ -245,6 +253,7 @@ const Philanthropy = styled.div`
         grid-area: kat;
         width: 56px;
         justify-self: right;
+        cursor: pointer;
     }
     .blurb {
         grid-area: blurb;
@@ -464,13 +473,22 @@ const Gallery = styled.div`
 
     .gallery-item {
         position: relative;
+        cursor: pointer;
+        .caption {
+            padding: 12px 0;
+            font-weight: 400;
+        }
         @media (min-width: 768px) {
             :hover {
                 .caption-overlay {
                     opacity: 1;
                 }
             }
+            .caption {
+                display: none;
+            }
         }
+
         .caption-overlay {
             transition: all 200ms ease-in-out;
             opacity: 0;
@@ -478,11 +496,17 @@ const Gallery = styled.div`
             top: 0;
             height: 100%;
             width: 100%;
-            background-color: black;
+            background-color: #000000b5;
+
             padding: 16px;
             p {
                 color: white;
-                font-size: 14px;
+                font-size: 12px;
+            }
+            @media (min-width: 1024px) {
+                p {
+                    font-size: 14px;
+                }
             }
         }
     }
@@ -494,7 +518,7 @@ const Gallery = styled.div`
     }
     .image-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         grid-gap: 24px;
     }
     @media (min-width: 768px) {
@@ -511,7 +535,7 @@ const Image = styled.div`
     background-color: ${Colors.lightGrey};
     background-image: url(${({ img }) => img});
     background-size: cover;
-    background-position: center;
+    background-position: top;
     position: relative;
     img {
         position: absolute;
@@ -522,4 +546,12 @@ const Image = styled.div`
         opacity: 0;
     }
 `;
-export default Branding;
+
+const PageSeperator = styled.div`
+    width: 200px;
+    height: 12px;
+    background-color: ${Colors.magenta};
+    margin-top: 56px;
+    margin-bottom: 64px;
+`;
+export default withRouter(Branding);

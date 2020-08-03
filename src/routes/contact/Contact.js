@@ -8,7 +8,7 @@ import { useState } from "react";
 
 const Contact = () => {
     const { state, submit } = formCarry({
-        id: "B5KG4mN4BPMo",
+        id: "ZezzGlB0zOmU",
     });
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
@@ -53,13 +53,11 @@ const Contact = () => {
 
                     <button type='submit'>
                         <p>Send</p>
-                        <div className='accent' />
                     </button>
                 </Form>
 
                 <ContactDetails>
-                    <p>Jennifer Jacques-Miller | Managing Attorney </p>
-                    <p>The Law Firm of Jacques & Associates</p>
+                    <p>Avant Garde Management Sports</p>
                     <p>295 Madison Avenue, 12th Floor,</p>
                     <p>New York, N.Y. 10017 | </p>
                     <p>T.: +1 212.365.5625 | F: 212.378.0151</p>
@@ -108,7 +106,7 @@ const Header = styled.div`
     }
 `;
 const Form = styled.form`
-grid-area: form;
+    grid-area: form;
     display: grid;
     grid-row-gap: 64px;
     margin-bottom: 40px;
@@ -131,42 +129,32 @@ grid-area: form;
         }
     }
     button {
-        position: relative;
-        padding: 14px;
+        padding: 12px 0;
+        width: calc(100% - 70px);
         outline: none;
-        background-color: transparent;
+        background-color: ${Colors.magenta};
         border: none;
         cursor: pointer;
-        /* background-color: ${Colors.magenta}; */
-        p {
-            position: absolute;
-            top: 12px;
-            text-align: left;
-            padding-left: 24px;
-            color: ${Colors.black};
-            z-index: 1;
-            font-weight: 600;
-            font-size: 18px;
-        }
-        .accent {
-            z-index: 0;
-            position: absolute;
-            left: 0;
-            top: 90%;
-            background-color: ${Colors.magenta};
-            height: 100%;
-            width: 100%;
+        font-weight: 600;
+        font-size: 16px;
+        color: ${Colors.black};
+        border-radius: 2px;
+        :hover {
+            color: ${Colors.white};
+            background-color: ${Colors.black};
+            transition: all 150ms ease-in-out;
         }
     }
     @media (min-width: 1200px) {
-    max-width: unset;
-    button{
-        justify-self: end;
-    min-width: 320px;
-    }
-    input{
-        margin-right: 156px;
-    }
+        max-width: unset;
+        button {
+            /* justify-self: end; */
+            width: calc(100% - 156px);
+            min-width: 320px;
+        }
+        input {
+            margin-right: 156px;
+        }
     }
 `;
 const ContactDetails = styled.div`

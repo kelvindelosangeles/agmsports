@@ -7,7 +7,7 @@ import Logo from "../../assets/logo/Dark.svg";
 import { withRouter, Link } from "react-router-dom";
 import Colors from "../../constants/Colors";
 import LogoMark from "../../assets/logo/LogoMark Dark.png";
-import Facebook from "../../assets/icons/Facebook.svg";
+import Instagram from "../../assets/icons/instagram.svg";
 import Twitter from "../../assets/icons/Twitter.svg";
 import LinkedIn from "../../assets/icons/Linkedin.svg";
 
@@ -52,12 +52,15 @@ const MobileNavbar = ({ location }) => {
                             Branding
                         </Link>
                         <Link to='/contact' onClick={CloseNavbar}>
+                            Clients
+                        </Link>
+                        <Link to='/contact' onClick={CloseNavbar}>
                             Contact
                         </Link>
                     </div>
                     <div className='social-links'>
                         <a href='#'>
-                            <img src={Facebook} alt='' />
+                            <img src={Instagram} alt='' />
                         </a>
                         <a href='#'>
                             <img src={Twitter} alt='' />

@@ -26,11 +26,15 @@ const About = () => {
                     </Image1>
                     <div className='name'>Jennifer Jacques</div>
                     <Envelope email='Jennifer@agmsports.nyc' />
+                    <div className='line' />
                     <div className='blurb'>
-                        <span />
                         Jennifer is a certified NCAA, NBPA, WNBA, FIBA agent. Jennifer has successfully negotiated 2-Way Contracts as well as NBA
                         Contracts with the Denver Nuggets and the Philadelphia 76ers.  Jennifer also handles off the court branding and non-profit
-                        initiatives on behalf of her clients.
+                        initiatives on behalf of her clients. Jennifer also serves as a managing partner at{" "}
+                        <a href='http://jacqueslawfirm.com/jennifer-jacques-attorney-corporate-sports-entertainment-law' target='blank'>
+                            Jacques & Associates
+                        </a>{" "}
+                        where she specializes in sports law as well as corporate transactions.
                     </div>
                 </Card>
                 <Card className='card2'>
@@ -38,7 +42,9 @@ const About = () => {
                         <div className='accent' />
                     </Image2>
                     <div className='name'>Polina Manis</div>
-                    <Envelope email='Contact@agmg.nyc' />
+                    <Envelope email='contact@agmsports.nyc' />
+                    <div className='line' />
+
                     <div className='blurb'>
                         <span />
                         Polina handles Marketing and Communication matters at AGM.
@@ -49,7 +55,7 @@ const About = () => {
                         <div className='accent' />
                     </Image3>
                     <div className='name'>Riley Parker </div>
-                    <Envelope email='Contact@agmg.nyc' />
+                    <Envelope email='contact@agmsports.nyc' />
                     <div className='blurb'>Riley is an Executive Assistant at AGM.</div>
                 </Card> */}
             </Grid>
@@ -93,6 +99,7 @@ const Card = styled.div`
     grid-template-areas:
         "image image"
         "name icon"
+        "line ."
         "blurb blurb";
     .name {
         grid-area: name;
@@ -105,7 +112,22 @@ const Card = styled.div`
         cursor: pointer;
         width: 32px;
     }
+    .line {
+        grid-area: line;
+        width: 80px;
+        height: 1px;
+        background-color: black;
+        margin-top: 12px;
+    }
     .blurb {
+        margin-top: 16px;
+        grid-area: blurb;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 28px;
+        a {
+            font-weight: 500;
+        }
         span {
             margin-top: -4px;
             margin-bottom: 16px;
@@ -113,13 +135,6 @@ const Card = styled.div`
             height: 1px;
             background-color: ${Colors.black};
         }
-        margin-top: 16px;
-        grid-area: blurb;
-        font-weight: 300;
-        font-size: 16px;
-        line-height: 28px;
-        display: flex;
-        flex-direction: column;
     }
     .image {
         grid-area: image;
