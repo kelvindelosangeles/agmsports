@@ -3,12 +3,12 @@ import styled from "styled-components";
 import Page from "../../global/Page";
 import AboutAccents from "./components/AboutAccents";
 import Colors from "../../constants/Colors";
-import image3 from "../../assets/logo/Dark.svg";
 
 import Envelope from "../../assets/icons/animated/Envelope.js";
 import TwitterFeed from "./components/TwitterFeed";
 import Jennifer from "../../assets/images/profile images/Jennifer Profile.jpeg";
 import Polina from "../../assets/images/profile images/polina.jpeg";
+import Andre from "../../assets/images/profile images/andre.PNG";
 import { withRouter } from "react-router-dom";
 
 const About = () => {
@@ -50,14 +50,14 @@ const About = () => {
                         Polina handles Marketing and Communication matters at AGM.
                     </div>
                 </Card>
-                {/* <Card className='card3'>
-                    <Image3 image={image3}>
+                <Card className='card3'>
+                    <Image3 image={Andre}>
                         <div className='accent' />
                     </Image3>
                     <div className='name'>Riley Parker </div>
                     <Envelope email='contact@agmsports.nyc' />
                     <div className='blurb'>Riley is an Executive Assistant at AGM.</div>
-                </Card> */}
+                </Card>
             </Grid>
             {/* <TwitterFeed /> */}
         </Page>
@@ -142,94 +142,91 @@ const Card = styled.div`
 `;
 
 const Image1 = styled.div`
-        margin-bottom: 54px;
-        position: relative;
+    margin-bottom: 54px;
+    position: relative;
+    height: 240px;
+    width: 240px;
+    background-image: url("${({ image }) => image}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: -20px;
+    .accent {
         height: 240px;
         width: 240px;
-        background-image: url("${({ image }) => image}");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position-y: -20px;
-        .accent {
-            height: 240px;
-        width: 240px;
-            border-bottom: 1px solid ${Colors.magenta};
-            border-right: 1px solid ${Colors.magenta};
-            position: absolute;
-            right: -14px;
-            bottom: -14px;
-            z-index: -2;
-        }
-        @media(min-width: 1024px){
-            height: 331px;
-        width: 331px;
-        .accent{
-            height: 331px;
-        width: 331px;
-
-        }
-        }
-    
-`;
-const Image2 = styled.div`
-        position: relative;
-        height: 240px;
-        width: 240px;
-        background-image: url("${({ image }) => image}");
-        background-size: cover;
-        background-position: center;
-        margin-left: 14px;
-        margin-top: 14px;
-        margin-bottom: 40px;
-        .accent {
-            height: 240px;
-            width: 240px;
-            background-color: ${Colors.lightGrey};
-            position: absolute;
-            right: 14px;
-            bottom: 14px;
-            z-index: -2;
-        }
-        @media(min-width: 1024px){
+        border-bottom: 1px solid ${Colors.magenta};
+        border-right: 1px solid ${Colors.magenta};
+        position: absolute;
+        right: -14px;
+        bottom: -14px;
+        z-index: -2;
+    }
+    @media (min-width: 1024px) {
         height: 331px;
         width: 331px;
         .accent {
             height: 331px;
+            width: 331px;
+        }
+    }
+`;
+const Image2 = styled.div`
+    position: relative;
+    height: 240px;
+    width: 240px;
+    background-image: url("${({ image }) => image}");
+    background-size: cover;
+    background-position: center;
+    margin-left: 14px;
+    margin-top: 14px;
+    margin-bottom: 40px;
+    .accent {
+        height: 240px;
+        width: 240px;
+        background-color: ${Colors.lightGrey};
+        position: absolute;
+        right: 14px;
+        bottom: 14px;
+        z-index: -2;
+    }
+    @media (min-width: 1024px) {
+        height: 331px;
         width: 331px;
+        .accent {
+            height: 331px;
+            width: 331px;
         }
-        }
-        
+    }
 `;
 const Image3 = styled.div`
-        position: relative;
+    position: relative;
+    height: 240px;
+    width: 300px;
+    background-image: url("${({ image }) => image}");
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 54px;
+    /* ====== Until theres an image for Riley  */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: white;
+    .accent {
         height: 240px;
         width: 300px;
-        background-image: url("${({ image }) => image}");
-        background-size: cover;
-        background-position: center;
-        margin-bottom: 54px;
         /* ====== Until theres an image for Riley  */
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-color: white;
+        /* background-color: ${Colors.black}; */
+        position: absolute;
+        right: -14px;
+        bottom: -14px;
+        z-index: -2;
+    }
+    @media (min-width: 1024px) {
+        height: 331px;
+        width: 460px;
         .accent {
-            height: 240px;
-            width: 300px;
-        /* ====== Until theres an image for Riley  */
-            /* background-color: ${Colors.black}; */
-            position: absolute;
-            right: -14px;
-            bottom: -14px;
-            z-index: -2;
-        }    
-        @media(min-width: 1024px){
             height: 331px;
             width: 460px;
-            .accent{
-                height: 331px;
-               width: 460px;
-            }
-         }
+        }
+    }
 `;
 
 export default withRouter(About);
