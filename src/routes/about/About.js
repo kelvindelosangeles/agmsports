@@ -54,9 +54,15 @@ const About = () => {
                     <Image3 image={Andre}>
                         <div className='accent' />
                     </Image3>
-                    <div className='name'>Riley Parker </div>
+                    <div className='name'>Andre Oupoh </div>
                     <Envelope email='contact@agmsports.nyc' />
-                    <div className='blurb'>Riley is an Executive Assistant at AGM.</div>
+                    <div className='line' />
+
+                    <div className='blurb'>
+                        As a players development and trainer, Andre worked with some of the top Hs, collegians and NBA players. Hands on client
+                        service, people person with a persuasive style of recruiting. I have problem solving skills, also serve as a mentor to student
+                        athletes.
+                    </div>
                 </Card>
             </Grid>
             {/* <TwitterFeed /> */}
@@ -213,7 +219,7 @@ const Image3 = styled.div`
         height: 240px;
         width: 300px;
         /* ====== Until theres an image for Riley  */
-        /* background-color: ${Colors.black}; */
+        background-color: #2c2e2f;
         position: absolute;
         right: -14px;
         bottom: -14px;
