@@ -59,9 +59,11 @@ const About = () => {
                     <div className='line' />
 
                     <div className='blurb'>
-                        As a players development and trainer, Andre worked with some of the top Hs, collegians and NBA players. Hands on client
-                        service, people person with a persuasive style of recruiting. I have problem solving skills, also serve as a mentor to student
-                        athletes.
+                        As a Player Developtment Coach and Trainer, Andre worked with some of the top High School, Collegiate and NBA players in the
+                        country. Andre is hands on with our clients and provides phenomenal client service with a persuasive style of recruiting.
+                        Andre is a great problem solver and a sincere people person. Prior to AGM Andre provided elite training and conditioning to
+                        Athletes around the world and worked as a scout for the Indiana Pacers. On his spare time - Andre enjoys volunteering with
+                        communities serving underprivileged young adolescents. Andre also serves as a mentor to many athletes.
                     </div>
                 </Card>
             </Grid>
